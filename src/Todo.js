@@ -13,6 +13,7 @@ class Todo extends React.Component{
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleKeyDown = this.handleKeyDown.bind(this);
         this.handleTaskClick = this.handleTaskClick.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
     }
 
     handleInputChange = (event) => {
@@ -45,13 +46,18 @@ class Todo extends React.Component{
             })
         })
     }
+    handleDelete = (taskID) => {
+        this.setState({
+            tasks : this.state.tasks.filter((task) => task.id !== taskID)
+        })
+    }
 
 
     render(){
         return <div>
             <input value={this.state.text} onChange={this.handleInputChange} onKeyDown={this.handleKeyDown}/>
             <p>Here are your tasks: </p>
-            <TaskList tasks={this.state.tasks} onTaskClick={this.handleTaskClick}/>
+            <TaskList tasks={this.state.tasks} onTaskClick={this.handleTaskClick} onDelete={this.handleDelete}/>
         </div>
     }
 
