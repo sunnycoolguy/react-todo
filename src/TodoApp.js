@@ -2,6 +2,8 @@ import React from 'react';
 import TodoList from './TodoList.js';
 import TodoCounter from './TodoCounter.js';
 import TodoActionBar from './TodoActionBar.js';
+import './TodoApp.css';
+import logo from './images/react-logo.png';
 
 
 class TodoApp extends React.Component{
@@ -72,12 +74,14 @@ class TodoApp extends React.Component{
     }
 
     render(){
-        return <div>
+        return <div className="app-container">
+            <h1>React Todo List App</h1>
             <input placeholder="Enter a todo" value={this.state.text} onChange={this.handleInputChange} onKeyDown={this.handleKeyDown}/>
             <p>Here are your tasks: </p>
             <TodoList todos={this.state.todos} onTodoClick={this.handleTodoClick} onDelete={this.handleDelete} show={this.state.show}/>
             <TodoCounter todos={this.state.todos}/>
             <TodoActionBar onAction={this.handleAction} onDelteAllComplete={this.handleDelteAllComplete}/>
+            <img className="logo" alt="the react logo" src={logo}/>
         </div>
     }
 
