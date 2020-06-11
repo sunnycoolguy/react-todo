@@ -1,6 +1,7 @@
 import React from 'react';
 import TodoList from './TodoList.js';
 import TodoCounter from './TodoCounter.js';
+import TodoActionBar from './TodoActionBar.js';
 
 
 class TodoApp extends React.Component{
@@ -76,12 +77,7 @@ class TodoApp extends React.Component{
             <p>Here are your tasks: </p>
             <TodoList todos={this.state.todos} onTodoClick={this.handleTodoClick} onDelete={this.handleDelete} show={this.state.show}/>
             <TodoCounter todos={this.state.todos}/>
-            <div id="action-bar" class="flex">
-                <button onClick={this.handleAction} value="all">Show All</button>
-                <button onClick={this.handleAction} value="active">Show Active</button>
-                <button onClick={this.handleAction} value="complete">Show Complete</button>
-                <button onClick={this.handleDelteAllComplete}>Delete All Complete Tasks</button>
-            </div>
+            <TodoActionBar onAction={this.handleAction} onDelteAllComplete={this.handleDelteAllComplete}/>
         </div>
     }
 
