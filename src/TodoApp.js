@@ -4,11 +4,12 @@ import TodoCounter from './TodoCounter.js';
 
 
 class TodoApp extends React.Component{
+   
     constructor(props){
         super(props);
         this.state = {
             text: '',
-            todos: [{id: 0, desc:'Take the dog out for a walk', status: "active"}, {id: 1, desc:'Break dance', status: "active"}, {id: 2, desc:'Do a barrel roll', status: "active"}],
+            todos: [{id: 0, desc:"Take the dog out for a walk", status: "active"}, {id: 1, desc:"Break dance", status: "active"}, {id: 2, desc:"Do a barrel roll", status: "active"}],
             lastId: 2,
             show: "all"
         }
@@ -17,6 +18,7 @@ class TodoApp extends React.Component{
         this.handleTodoClick = this.handleTodoClick.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
         this.handleAction = this.handleAction.bind(this);
+        this.handleDelteAllComplete = this.handleDelteAllComplete.bind(this);
     }
 
     handleInputChange = (event) => {
@@ -56,6 +58,12 @@ class TodoApp extends React.Component{
         })
     }
 
+    handleDelteAllComplete = (event) => {
+        this.setState({
+            todos : this.state.todos.filter((todo) => todo.status === "active")
+        })
+    }
+
     handleAction = (event) => {
         this.setState({
             show : event.target.value 
@@ -72,6 +80,7 @@ class TodoApp extends React.Component{
                 <button onClick={this.handleAction} value="all">Show All</button>
                 <button onClick={this.handleAction} value="active">Show Active</button>
                 <button onClick={this.handleAction} value="complete">Show Complete</button>
+                <button onClick={this.handleDelteAllComplete}>Delete All Complete Tasks</button>
             </div>
         </div>
     }
@@ -81,7 +90,6 @@ class TodoApp extends React.Component{
 
 export default TodoApp;
 
-//TODO: Add functionality to delete all incomplete taks
 
 
 
