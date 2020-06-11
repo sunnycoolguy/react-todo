@@ -1,9 +1,9 @@
 import React from 'react';
-import Todo from './Todo.js';
+import TodoApp from './TodoApp.js';
 
 
 export class App extends React.Component{
     render(){
-        return <Todo/>;
+        return <TodoApp/>;
     }
 }
