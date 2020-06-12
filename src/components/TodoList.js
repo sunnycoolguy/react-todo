@@ -1,6 +1,6 @@
 import React from 'react';
-import "./TodoList.css";
-import cancel from "./images/x-button.png";
+import "../stylesheets/TodoList.css";
+import cancel from "../images/x-button.png";
 
 const TodoList = (props) => {
     let todos = [];

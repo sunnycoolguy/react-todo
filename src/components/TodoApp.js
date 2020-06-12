@@ -2,8 +2,8 @@ import React from 'react';
 import TodoList from './TodoList.js';
 import TodoCounter from './TodoCounter.js';
 import TodoActionBar from './TodoActionBar.js';
-import './TodoApp.css';
-import logo from './images/react-logo.png';
+import '../stylesheets/TodoApp.css';
+import logo from '../images/react-logo.png';
 
 
 class TodoApp extends React.Component{
