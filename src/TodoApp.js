@@ -84,8 +84,6 @@ class TodoApp extends React.Component{
             <img className="logo" alt="the react logo" src={logo}/>
         </div>
     }
-
-
 }
 
 export default TodoApp;

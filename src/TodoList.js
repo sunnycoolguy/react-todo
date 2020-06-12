@@ -1,5 +1,6 @@
 import React from 'react';
-
+import "./TodoList.css";
+import cancel from "./images/x-button.png";
 
 const TodoList = (props) => {
     let todos = [];
@@ -13,9 +14,9 @@ const TodoList = (props) => {
     }
 
     return todos.map((todo) => {
-        return <div style={{display : "flex"}}>
+        return <div className="list">
             <div style={{textDecoration : todo.status === "active" ? "none" : "line-through"}} key={todo.id} onClick={() => props.onTodoClick(todo.id)}>{todo.desc}</div>
-            <button onClick={() => props.onDelete(todo.id)}>x</button>
+            <img className="remove" src={cancel} onClick={() => props.onDelete(todo.id)} alt="remove item"/>
         </div>
     });
 }

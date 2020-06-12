@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Roboto';
     src: local('Roboto'), url(./fonts/Roboto-Regular.ttf) format('truetype');
-  }
+}
 
 .app-container{
     font-family: 'Roboto';
@@ -24,4 +24,8 @@ input {
     margin-top: 10px;
     width: 70px;
     height: 50px;
+}
+
+h1 {
+    color:#61DAFA;
 }
