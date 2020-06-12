@@ -7,7 +7,6 @@ import logo from '../images/react-logo.png';
 
 
 class TodoApp extends React.Component{
-   
     constructor(props){
         super(props);
         this.state = {
